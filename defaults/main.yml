@@ -1,0 +1,15 @@
+---
+# Deploy a local module
+openmrs_shr_deploy: false
+# local folder modules to be deployed are located.
+openmrs_shr_modules_dir:
+# Location on remote host where modules will be copied to.
+openmrs_modules_dir: "{{usr_tomcat}}/.OpenMRS/modules"
+
+# Database setup **These variables need to be in your playbook to be used in both the ansible-openmrs role and this role.**
+openmrs_db_name: openmrs
+openmrs_db_user: openmrs_user
+openmrs_db_user_password: openmrs_user
+# Dont change this unless you already have mysql setup
+openmrs_db_login_user: root
+openmrs_db_login_password: root

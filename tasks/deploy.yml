@@ -1,0 +1,16 @@
+- name: Copy over modules
+  synchronize:  src={{openmrs_shr_modules_dir}}
+                dest={{openmrs_modules_dir}}
+                archive=no
+  notify: restart tomcat
+
+- name: Copy over shr demo db
+  copy: src=openmrs-shr.sql
+        dest=/tmp/openmrs-shr.sql
+
+- name: Import SHR DB
+  mysql_db: login_user={{openmrs_db_login_user}}
+            login_password={{openmrs_db_login_password}}
+            name={{openmrs_db_name}}
+            state=import
+            target=/tmp/openmrs-shr.sql

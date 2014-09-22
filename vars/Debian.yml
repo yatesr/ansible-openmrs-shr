@@ -1,0 +1,5 @@
+usr_tomcat: /usr/share/tomcat7
+var_tomcat: /var/lib/tomcat7
+etc_tomcat: /etc/tomcat7
+tomcat_service: tomcat7
+tomcat_user: tomcat7

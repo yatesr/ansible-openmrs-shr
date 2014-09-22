@@ -1,0 +1,9 @@
+---
+- include: cleanup.yml
+  when: openmrs_shr_deploy
+
+- include: deploy.yml
+  when: openmrs_shr_deploy
+
+- include: install.yml
+  when: not openmrs_shr_deploy
