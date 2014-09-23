@@ -1,7 +1,8 @@
 - name: Copy over modules
-  synchronize:  src={{openmrs_shr_modules_dir}}
-                dest={{openmrs_modules_dir}}
+  synchronize:  src={{openmrs_shr_modules_dir}}/
+                dest={{openmrs_modules_dir}}/
                 archive=no
+                recursive=yes
   notify: restart tomcat
 
 - name: Download dependent modules
