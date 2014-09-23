@@ -9,7 +9,6 @@
            dest={{openmrs_modules_dir}}
   with_items:
    - https://modules.openmrs.org/modulus/api/releases/1053/download/xforms-4.3.0.omod
-  notfiy: restart tomcat
 
 - name: Copy over shr demo db
   copy: src=openmrs-shr.sql
