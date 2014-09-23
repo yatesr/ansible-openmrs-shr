@@ -4,6 +4,13 @@
                 archive=no
   notify: restart tomcat
 
+- name: Download dependent modules
+  get_url: url={{item}}
+           dest={{openmrs_modules_dir}}
+  with_items:
+   - https://modules.openmrs.org/modulus/api/releases/1053/download/xforms-4.3.0.omod
+  notfiy: restart tomcat
+
 - name: Copy over shr demo db
   copy: src=openmrs-shr.sql
         dest=/tmp/openmrs-shr.sql
@@ -14,3 +21,4 @@
             name={{openmrs_db_name}}
             state=import
             target=/tmp/openmrs-shr.sql
+  notify: restart tomcat

@@ -4,7 +4,7 @@ openmrs_shr_deploy: false
 # local folder modules to be deployed are located.
 openmrs_shr_modules_dir:
 # Location on remote host where modules will be copied to.
-openmrs_modules_dir: "{{usr_tomcat}}/.OpenMRS/modules"
+openmrs_modules_dir: "{{usr_tomcat}}/.OpenMRS/modules/"
 
 # Database setup **These variables need to be in your playbook to be used in both the ansible-openmrs role and this role.**
 openmrs_db_name: openmrs
